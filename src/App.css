@@ -1,38 +1,106 @@
-.App {
-  text-align: center;
+
+.header-component{
+  box-shadow: 0px 2px 3px 2px #dfdfdf;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.search-text{
+  padding: 8px;
+  margin: 12px;
+  background: #dfdfdf url(assets/search.png);
+  outline: 0px;
+  border: 0px;
+  border-radius: 5px;
+  width: 40%;
+  padding-left: 35px;
+  background-repeat: no-repeat;
+  background-position: 6px center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.list-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+}
+.movie-card{
+  width: 215px;
+  margin: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0px 0px 3px 0px #9b9b9b;
+  cursor: pointer;
+}
+.movie-card img{
+  width:100%;
+}
+.movie-info{
+  display: flex;
+  margin-bottom: 5px;
+}
+.movie-title{
+  width: 69%;
+  margin-left: 3px;
+  margin-right: 7px;
+  font-size: 15px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.movie-rating{
+  width: 26%;
+  font-size: 15px;
+  color: #9f9f9f;
 }
 
-.App-link {
-  color: #61dafb;
+.movie-info{
+  padding: 10px;
+}
+.image-info{
+  width:210px;
+  float: left;
+}
+.image-info img{
+  width:100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movie-text{
+  width:calc( 100% - 210px );
+  margin-left: 10px;
+}
+.movie-text .text1{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.movie-details{
+  padding: 17px;
+    width: 139px;
+    display: inline-block;
+}
+
+.home-button{
+  width:52px;
+  height:51px;
+  background:url(assets/home.png);
+  cursor: pointer;
+  float: right;
+}
+
+.validate-user{
+  height: 100vh;
+}
+
+.validate-user a{
+  text-decoration: none;
+  position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.validate-btn{
+  background: #4285fa;
+    padding: 12px;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 3px #dfdfdf;
 }
