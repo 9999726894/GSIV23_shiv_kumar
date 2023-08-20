@@ -1,30 +1,44 @@
 import React from "react";
 import MovieCard from "./MovieCard";
-const MovieList = ()=>{
+import { getApiData } from '../ApiService';
+import { getFilterMovie } from '../Utils';
 
+const MovieList = ({ searchText })=>{
 
     const [movieData, setMovieData] = React.useState([]);
+    const [filterMovie, setFilterMovie] = React.useState([]);
 
-    const getData = async ()=>{
-        let myObject = await fetch("https://api.themoviedb.org/3/movie/upcoming?api_key=ad85cef9c89f3019f7fb50e4663b645d");
-        const jsonData = await myObject.json();
-        setMovieData(jsonData.results);
-       console.log(jsonData.results)
-    }
     React.useEffect(()=>{
-        getData();
-
+        (async ()=>{
+            let movieData = await getApiData();
+            setMovieData(movieData.results);
+            setFilterMovie(movieData.results);
+            console.log(movieData.results);
+        })()
     },[]);
+
+
+    React.useEffect(()=>{
+
+        setFilterMovie(getFilterMovie( movieData, searchText ));
+
+    },[searchText]);
 
     return (
         <div className="list-container">
             {
-                movieData.length > 0 ? movieData.map((item, index)=>{
+                filterMovie.length > 0 ? filterMovie.map((item, index)=>{
 
                     return (
                         <MovieCard item={ item } key={index}></MovieCard>
                     )
-                }) : <div>Loading....</div>
+                }) 
+                : 
+                <>
+                    {
+                        searchText.length > 0 ? <h3>This movie title not available...</h3> : <div>Loading....</div> 
+                    }
+                </>
             }
 
         </div>

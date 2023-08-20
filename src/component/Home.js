@@ -4,11 +4,13 @@ import MovieList from './MovieList';
 
 
 const Home = () => {
+ 
+    const [searchText, setSearchText] = React.useState("");
 
     return (
         <div className="App">
-            <Header page="home"></Header>
-            <MovieList></MovieList>
+            <Header page="home" setSearchText={ setSearchText }></Header>
+            <MovieList searchText={ searchText }></MovieList>
         </div>
     )
 }

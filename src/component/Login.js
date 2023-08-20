@@ -5,7 +5,7 @@ const Login = () => {
 
     return (
         <div className="validate-user">
-           <Link to={'/home'}>
+           <Link to={'/list'}>
             <span className="validate-btn">Validate User</span>
            </Link>
         </div>

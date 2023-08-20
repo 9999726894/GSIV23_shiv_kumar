@@ -11,7 +11,7 @@ const MovieCard = ({item})=>{
         dispatch(addMovie(item));
     }
     return(
-        <Link to="/movieinfo">
+        <Link to="/details">
             <div className="movie-card" onClick={showMovieDetails}>
                 <div><img src={`https://image.tmdb.org/t/p/original${ item.poster_path }`} alt=""/></div>
                 <div className="movie-info">

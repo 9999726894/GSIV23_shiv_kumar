@@ -1,7 +1,7 @@
 import React from "react";
 import {  Link } from "react-router-dom";
 
-const Header = ({page})=> {
+const Header = ({ page, setSearchText })=> {
 
     return (
         <div className="header-component">
@@ -9,12 +9,12 @@ const Header = ({page})=> {
              page === "details" ? 
                 <>
                     <div className="movie-details">Movie Details</div>
-                    <Link to={'/home'}><div className="home-button"></div></Link> 
                 </>
-
                 :
-                <input type="search" className="search-text" placeholder="Search"/>
+                <input type="search" className="search-text" placeholder="Search by movie title" onChange={ (e) => setSearchText(e.target.value) }/>
             }
+
+            <Link to={'/list'}><div className="home-button"></div></Link> 
         </div>
     )
 }

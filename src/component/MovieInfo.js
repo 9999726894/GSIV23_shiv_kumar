@@ -6,7 +6,9 @@ const MovieInfo = () => {
 
     const movie = useSelector((state) => state.movie.selectedMovie);
 
-    console.log(movie);
+    if(movie === null){
+        window.location.assign("/list");
+    }
 
     return (
         <div className="App">
